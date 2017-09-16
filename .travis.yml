@@ -10,6 +10,8 @@ before_install:
   - chmod +x gradlew
 
 after_success:
+  - ls -al build
+  - ls -al build/lib
   - docker build -t wenism/helloservice:$APP_VERSION .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push wenism/helloservice:$APP_VERSION  
