@@ -7,7 +7,8 @@ services:
   
 before_install:
   - export APP_VERSION=`git describe --always`
-  
+  - chmod +x gradlew
+
 after_success:
   - docker build -t wenism/helloservice:$APP_VERSION .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
