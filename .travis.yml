@@ -11,7 +11,7 @@ before_install:
 
 after_success:
   - ls -al build
-  - ls -al build/lib
+  - ls -al build/libs
   - docker build -t wenism/helloservice:$APP_VERSION .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push wenism/helloservice:$APP_VERSION  
