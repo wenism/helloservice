@@ -11,7 +11,6 @@ before_install:
 
 after_success:
   - echo APP_VERSION is $APP_VERSION
-  - echo login is $DOCKER_USERNAME
   - docker build -t wenism/helloservice:$APP_VERSION .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push wenism/helloservice:$APP_VERSION  
