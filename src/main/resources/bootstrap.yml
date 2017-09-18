@@ -1,0 +1,9 @@
+server:
+  port: 8080
+  
+spring:
+  application:
+    name: appa
+  cloud:
+    config:
+      uri: http://54.206.126.151:8888
