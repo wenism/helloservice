@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 @RestController
 public class DemoApplication {
 
-  @Value("${config.key1}")
+  @Value("${key1}")
   String name = "World";
   
   @RequestMapping("/")

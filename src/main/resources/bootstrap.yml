@@ -3,4 +3,4 @@ spring:
     name: appa
   cloud:
     config:
-      uri: http://54.206.96.78:8888
+      uri: http://172.31.7.75:8888
