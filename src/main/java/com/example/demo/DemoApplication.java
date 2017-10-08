@@ -11,8 +11,17 @@ import org.springframework.beans.factory.annotation.Value;
 @Configuration
 @EnableAutoConfiguration
 @SpringBootApplication
-@RestController
 public class DemoApplication {
+
+    
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+}
+
+@RestController
+@RefreshScope
+class MyRestController {
 
   @Value("${key1}")
   String name = "World";
@@ -21,8 +30,10 @@ public class DemoApplication {
   public String home() {
       return "Hello " + name;
   }
-    
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+
+	public MyRestController() {
+		System.out.println(getClass().getName() + " re-initialized");
 	}
+
+	
 }
