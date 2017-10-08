@@ -1,1 +1,0 @@
-docker run -d -p 8080:8080 --name foo -e "SPRING_PROFILES_ACTIVE=development" image:tag
